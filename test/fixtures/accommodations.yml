@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  max_males: 1
+  max_females: 1
+  max_neutral: 1
+  nightly_cost: 1
+  weekly_cost: 1
+
+two:
+  name: MyString
+  max_males: 1
+  max_females: 1
+  max_neutral: 1
+  nightly_cost: 1
+  weekly_cost: 1

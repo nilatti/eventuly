@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<strong>Event Name:</strong>
+	<%= @event.name %>
+
+<p>
+  <strong>Dates:</strong>
+  <%= @event.start_time %> - <%= @event.end_time %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @event.organization_id %>
+</p>
+
+<p>
+  <strong>Sessions:</strong>
+  <ul>
+    <% @event.sessions.each do |session| %>
+      <li><%= session.title %> -- <%= session.instructor %> <em><%= link_to 'Edit session', edit_event_session_path(@event, session) %></em></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Add new session', new_event_session_path(@event) %>
+</p>
+
+<p>
+  <strong>Meals:</strong>
+  <ul>
+    <% @event.meals.each do |meal| %>
+      <li><%= meal.name %> <%= link_to 'Edit meal', edit_event_meal_path(@event, meal) %></em>
+    <% end %>
+  </ul>
+  <%= link_to 'Add new meal', new_event_meal_path(@event) %>
+</p>
+
+<p>
+  <strong>Accommodations:</strong>
+  <ul>
+    <% @event.accommodations.each do |accommodation| %>
+      <li><%= accommodation.name %> <em><%= link_to 'Edit accommodation', edit_event_accommodation_path(@event, accommodation) %></em></li>
+    <% end %>
+  </ul>
+  <%= link_to 'Add new accommodation', new_event_accommodation_path(@event) %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |

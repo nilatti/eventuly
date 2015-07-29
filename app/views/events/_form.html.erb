@@ -1,0 +1,21 @@
+<%= semantic_form_for [@organization, @event] do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.inputs do %>
+    <%= f.input :name, :label => 'Event Name' %>
+    <%= f.input :start_time, :as => :datetime_picker, :local => true, :placeholder => "YYYY-MM-DD HH:MM" %>
+    <%= f.input :end_time, :as => :datetime_picker, :local => true, :placeholder => "YYYY-MM-DD HH:MM"  %>
+    <%= f.input :location %>
+  <% end %>
+  <%= f.actions %>
+<% end %>

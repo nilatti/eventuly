@@ -1,0 +1,7 @@
+ <div class="nested_fields">
+ <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :age, :as => :select, :collection => 0...18, :hint => "It helps us to know children's ages." %>
+
+  <%= link_to_remove_association "Remove this person", f %>
+</div>

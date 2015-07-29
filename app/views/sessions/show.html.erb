@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @session.title %>
+</p>
+
+<p>
+  <strong>Instructor:</strong>
+  <%= @session.instructor %>
+</p>
+
+<p>
+  <strong>When:</strong>
+  <%= @session.when %>
+</p>
+
+<p>
+  <strong>Max attendees:</strong>
+  <%= @session.max_attendees %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>

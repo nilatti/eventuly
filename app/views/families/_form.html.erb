@@ -1,0 +1,27 @@
+<%= semantic_form_for [@organization, @family] do |f| %>
+  <% if @family.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@family.errors.count, "error") %> prohibited this family from being saved:</h2>
+
+      <ul>
+      <% @family.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <%= f.semantic_fields_for :individuals do |individual| %>
+    <%= render 'individual_fields', :f => individual %>
+<% end %>
+<hr>
+<p><%= link_to_add_association "Add a person", f, :individuals %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

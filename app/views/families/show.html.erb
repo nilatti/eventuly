@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<p>
+	People in this family:
+	<ul>
+		<% @family.individuals.each do |i| %>
+		<li><%= i.name %><% if i.age %>, <em><%= i.age %> years old</em><% end %><%if i.email %>, <%= i.email %><% end %></li>
+		<% end %>
+	</ul>
+<p>
+  <strong>Last name:</strong>
+  <%= @family.last_name %>
+</p>
+
+<%= link_to 'Edit', [:edit, @organization, @family] %> |
+<%= link_to 'Back', organization_families_path(@family.organization) %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<p><%= link_to 'View Families', organization_families_path(@organization) %> | <%= link_to 'Add New Family', new_organization_family_path(@organization) %></p>
+
+<p><%= link_to 'View Events', organization_events_path(@organization) %> |<%= link_to 'Create New Event', new_organization_event_path(@organization) %> </p>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'All Organizations', organizations_path %>
